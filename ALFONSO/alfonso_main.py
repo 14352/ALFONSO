@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+# NOTE: this example requires PyAudio because it uses the Microphone class
+
+# ALFONSO was born at 11:51 5/1/2020
+
+import speech_recognition as sr
+import serial, time
+import alfonso_wordlists
+import alfonso_serial_communication
+
+# obtain audio from the microphone
+while(1):
+    #ser = serial.Serial('/dev/ttyACM0',19200)
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Say something!")
+        audio = r.listen(source)
+
+
+    # recognize speech using Google Speech Recognition
+    try:
+        # for testing purposes, we're just using the default API key
+        # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
+        # instead of `r.recognize_google(audio)`
+        capture = r.recognize_google(audio)
+        print(capture)
+        if capture in alfonso_wordlists.TRIGGERS:
+            print("yes?")
+            with sr.Microphone() as source:
+                print("Say something!")
+                audio = r.listen(source)
+                capture = r.recognize_google(audio)
+                print(capture)
+                if capture in alfonso_wordlists.DOOROPEN:
+                    alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
+                elif capture in alfonso_wordlists.DOORCLOSE:
+                    alfonso_serial_communication.ROOM_ARD_COM_CLOSEDOOR()
+                else:
+                    pass
+                
+    except sr.UnknownValueError:
+        print("Google Speech Recognition could not understand audio")
+    except sr.RequestError as e:
+        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+
