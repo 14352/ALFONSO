@@ -24,3 +24,7 @@ sudo apt install raspotify
 pip3 install speechrecognition
 
 sudo apt-get install arduino -y
+
+git config --global user.email hudsonhurtig@yahoo.com
+
+git config --global user.name 14352
