@@ -24,14 +24,17 @@ while(1):
                 
         elif goARR in alfonso_wordlists.DOORCLOSE:
             alfonso_serial_communication.ROOM_ARD_COM_CLOSEDOOR()
-                
+        elif goARR in alfonso_wordlists.FANON:
+            alfonso_serial_communication.ROOM_ARD_COM_FANON()
+        elif goARR in alfonso_wordlists.FANOFF:
+            alfonso_serial_communication.ROOM_ARD_COM_FANOFF() 
         else:
             print("KEYWORD recived no commands registered for:", goARR)
             pass
                 
     except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand audio")
+        print("whatever that was I didnt get it")
     except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        print("splat; {0}".format(e))
 
 
