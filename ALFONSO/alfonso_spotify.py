@@ -12,17 +12,17 @@ username = "redlavalamp1"
 scope = "user-read-playback-state,user-modify-playback-state"
 token = util.prompt_for_user_token(username, scope)
 sp = spotipy.Spotify(auth=token)
-
+raspberrypi = '98bb0735e28656bac098d927d410c3138a4b5bca'
 # Shows playing devices
 res = sp.devices()
 pprint(res)
 
 # Change track
-sp.start_playback(uris=['spotify:track:6gdLoMygLsgktydTQ71b15'], device_id='98bb0735e28656bac098d927d410c3138a4b5bca')
-
+def playMusic(shuffle): #shuffle boolean
+    sp.start_playback(context_uri="spotify:playlist:1ILlfhipr1ApFelcJY4dcO", device_id=raspberrypi)
+    sp.shuffle(shuffle, device_id=raspberrypi)
+def nextSong():
+    sp.next_track(device_id=raspberrypi)
+def setVolume(vol): #change volume vol is volume
+    sp.volume(vol)
 # Change volume
-while(1):
-    sp.volume(100)
-    sleep(3)
-    sp.volume(20)
-    sleep(3)
