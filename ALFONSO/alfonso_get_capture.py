@@ -1,4 +1,5 @@
 import speech_recognition as sr
+import alfonso_wordlists
 r = sr.Recognizer()
 def getGoogleCapture():
     with sr.Microphone() as source:

@@ -1,8 +1,5 @@
-TRIGGERS = ["Alfonso", "alfonso",
-            "hey Alfonso", "Hey Alfonso",
-            "Hey alfonso", "what's up Alfonso",
-            "WhatsApp Alfonso"]
+TRIGGERS = ["Alfonso", "alfonso"]
 DOOROPEN = ["open the door"]
-DOORCLOSE = ["close the door", "get the door"]
-FANON = ["turn the fan on","  turn the fan on", " turn on the fan"]
-FANOFF = ["turn the fan off"]
+DOORCLOSE = ["close the door", "get the door", " lose the door" ]
+FANON = ["turn the fan on","  turn the fan on", " turn on the fan", "  turn the fan on"]
+FANOFF = ["turn the fan off", "  turn the fan off"]
