@@ -8,36 +8,26 @@ import speech_recognition as sr
 import serial, time
 import alfonso_wordlists
 import alfonso_serial_communication
-
+import alfonso_get_capture
 # obtain audio from the microphone
 while(1):
     #ser = serial.Serial('/dev/ttyACM0',19200)
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Say something!")
-        audio = r.listen(source)
-
-
     # recognize speech using Google Speech Recognition
     try:
         # for testing purposes, we're just using the default API key
         # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
         # instead of `r.recognize_google(audio)`
-        capture = r.recognize_google(audio)
-        print(capture)
-        if capture in alfonso_wordlists.TRIGGERS:
-            print("yes?")
-            with sr.Microphone() as source:
-                print("Say something!")
-                audio = r.listen(source)
-                capture = r.recognize_google(audio)
-                print(capture)
-                if capture in alfonso_wordlists.DOOROPEN:
-                    alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
-                elif capture in alfonso_wordlists.DOORCLOSE:
-                    alfonso_serial_communication.ROOM_ARD_COM_CLOSEDOOR()
-                else:
-                    pass
+        goARR = alfonso_get_capture.getVoiceCommand()
+            
+        if goARR in alfonso_wordlists.DOOROPEN:
+            alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
+                
+        elif goARR in alfonso_wordlists.DOORCLOSE:
+            alfonso_serial_communication.ROOM_ARD_COM_CLOSEDOOR()
+                
+        else:
+            print("KEYWORD recived no commands registered for:", goARR)
+            pass
                 
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")

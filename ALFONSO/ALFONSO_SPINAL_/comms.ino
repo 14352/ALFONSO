@@ -4,25 +4,26 @@ void commsInit(){
   Serial.begin(9600);
   Serial.println("arduino ONLINE");
 }
-void COMMAND(){
-  int OUTINT = 0;
-  String goARR = "nothing";
+void getCommand(){
   
+  String goARR = "nothing"; 
   goARR= getSTR();
+  int OUTINT = 0;
   if(goARR == "a open door"){
-    OUTINT = 1;
     openDoor();
-    
   } else if(goARR == "a close door"){
-    digitalWrite(13, HIGH); 
-    delay(500); 
-    digitalWrite(13, LOW);
-    delay(500);
     closeDoor();
+  } else if(goARR == "a fan on"){
+    fanOn();
+  } else if(goARR == "a fan off"){
+    fanOff();
   } else{
     OUTINT = 0; 
   }
+  
 }
+
+
 String getSTR(){
   String ThisString;
   if(Serial.available() > 0){

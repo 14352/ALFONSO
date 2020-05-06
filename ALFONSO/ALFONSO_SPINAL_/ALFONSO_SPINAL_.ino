@@ -3,10 +3,10 @@ void setup() {
   blindsInit();
   doorInit();
   commsInit();
+  fanInit();
   pinMode(13, OUTPUT);
 }
 
 void loop() {
-  COMMAND(); 
-  //this is a test 2
+  getCommand(); 
 }

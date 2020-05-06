@@ -3,4 +3,4 @@ TRIGGERS = ["Alfonso", "alfonso",
             "Hey alfonso", "what's up Alfonso",
             "WhatsApp Alfonso"]
 DOOROPEN = ["open the door"]
-DOORCLOSE = ["close the door"]
+DOORCLOSE = ["close the door", "get the door"]
