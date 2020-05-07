@@ -16,5 +16,6 @@ def getVoiceCommand():
         audio = r.listen(source)
         capture = r.recognize_google(audio)
         Alfonso = "Alfonso"
+        print(capture)
     return (capture[(capture.find(Alfonso))+8:])
         
