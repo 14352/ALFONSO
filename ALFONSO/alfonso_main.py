@@ -11,12 +11,16 @@ import alfonso_serial_communication
 import alfonso_get_capture
 import alfonso_spotify
 import alfonso_button
+import alfonso_speak
 # obtain audio from the microphone
-
+alfonso_spotify.reclaimSpotify()
 while(1):
     if(alfonso_button.button1()):
-        alfonso_spotify.mute()
-                #ser = serial.Serial('/dev/ttyACM0',19200)
+        try:
+            alfonso_spotify.mute()
+        except:
+            print("spotify not configured")
+        #ser = serial.Serial('/dev/ttyACM0',19200)
         # recognize speech using Google Speech Recognition
         try:
             # for testing purposes, we're just using the default API key
@@ -26,18 +30,23 @@ while(1):
                 
             if goARR in alfonso_wordlists.DOOROPEN:
                 alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
+                alfonso_speak.alfonsoSay("opening, the door")
                     
             elif goARR in alfonso_wordlists.DOORCLOSE:
                 alfonso_serial_communication.ROOM_ARD_COM_CLOSEDOOR()
+                alfonso_speak.alfonsoSay("closing, the door")
                 
             elif goARR in alfonso_wordlists.FANON:
                 alfonso_serial_communication.ROOM_ARD_COM_FANON()
+                alfonso_speak.alfonsoSay("turning the fan, on")
                 
             elif goARR in alfonso_wordlists.FANOFF:
                 alfonso_serial_communication.ROOM_ARD_COM_FANOFF()
+                alfonso_speak.alfonsoSay("turning the fan, off")
                 
             elif goARR in alfonso_wordlists.PLAYMUSIC:
                 alfonso_spotify.playMusic()
+                alfonso_speak.alfonsoSay("it is that time of day already?")
                 
             elif goARR in alfonso_wordlists.NEXTSONG:
                 alfonso_spotify.nextSong()
@@ -50,8 +59,13 @@ while(1):
                 
             else:
                 print("KEYWORD recived no commands registered for:", goARR)
+                alfonso_speak.alfonsoSay("KEYWORD recived no commands registered for"+ goARR)
                 pass
-            alfonso_spotify.concurVol()
+            try:
+                alfonso_spotify.concurVol()
+            except:
+                print("spotify not configured")
+            
                     
         except sr.UnknownValueError:
             print("whatever that was I didnt get it")

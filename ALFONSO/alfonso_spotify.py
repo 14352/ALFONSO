@@ -14,16 +14,18 @@ token = util.prompt_for_user_token(username, scope)
 sp = spotipy.Spotify(auth=token)
 raspberrypi = '98bb0735e28656bac098d927d410c3138a4b5bca'
 global music_vol
-music_vol = 100
+music_vol = 0
 # Shows playing devices
 #res = sp.devices()
 #pprint(res)
 
 # Change track
 def playMusic(): #shuffle boolean
+    global music_vol
     sp.start_playback(context_uri="spotify:playlist:1ILlfhipr1ApFelcJY4dcO", device_id=raspberrypi)
     sp.shuffle(True, device_id=raspberrypi)
-    setVolume(100)
+    music_vol = 100
+    setVolume(music_vol)
     
 def nextSong():
     sp.next_track(device_id=raspberrypi)
@@ -50,4 +52,8 @@ def mute():
     sp.volume(0)
 def concurVol():
     sp.volume(music_vol)
+def reclaimSpotify(): #shuffle boolean
+    sp.start_playback(context_uri="spotify:playlist:1ILlfhipr1ApFelcJY4dcO", device_id=raspberrypi)
+    sp.shuffle(True, device_id=raspberrypi)
+    setVolume(0)
 # Change volume
