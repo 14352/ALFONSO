@@ -53,7 +53,14 @@ def mute():
 def concurVol():
     sp.volume(music_vol)
 def reclaimSpotify(): #shuffle boolean
-    sp.start_playback(context_uri="spotify:playlist:1ILlfhipr1ApFelcJY4dcO", device_id=raspberrypi)
-    sp.shuffle(True, device_id=raspberrypi)
-    setVolume(0)
+    try:
+        username = "redlavalamp1"
+        scope = "user-read-playback-state,user-modify-playback-state"
+        token = util.prompt_for_user_token(username, scope)
+        sp = spotipy.Spotify(auth=token)
+        sp.start_playback(context_uri="spotify:playlist:1ILlfhipr1ApFelcJY4dcO", device_id=raspberrypi)
+        sp.shuffle(True, device_id=raspberrypi)
+        setVolume(0)
+    except:
+        print("spotify no work")
 # Change volume

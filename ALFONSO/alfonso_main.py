@@ -3,7 +3,7 @@
 # NOTE: this example requires PyAudio because it uses the Microphone class
 
 # ALFONSO was born at 11:51 5/1/2020
-
+# ALFONSO learned to speak at 11:53 5/6/2020
 import speech_recognition as sr
 import serial, time
 import alfonso_wordlists
@@ -16,10 +16,8 @@ import alfonso_speak
 alfonso_spotify.reclaimSpotify()
 while(1):
     if(alfonso_button.button1()):
-        try:
-            alfonso_spotify.mute()
-        except:
-            print("spotify not configured")
+        alfonso_spotify.mute()
+        
         #ser = serial.Serial('/dev/ttyACM0',19200)
         # recognize speech using Google Speech Recognition
         try:
@@ -64,11 +62,13 @@ while(1):
             try:
                 alfonso_spotify.concurVol()
             except:
-                print("spotify not configured")
+                alfonso_speak.alfonsoSay("spotify not configured: attempting token reconfiguration")
+                alfonso_spotify.reclaimSpotify()
             
                     
         except sr.UnknownValueError:
             print("whatever that was I didnt get it")
+            pass
         except sr.RequestError as e:
             print("splat; {0}".format(e))
     else:
