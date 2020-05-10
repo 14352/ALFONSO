@@ -15,8 +15,8 @@ import alfonso_speak
 # obtain audio from the microphone
 alfonso_spotify.reclaimSpotify()
 while(1):
-    if(alfonso_button.button1()):
-        alfonso_spotify.mute()
+    #if(alfonso_button.button1()):
+        #alfonso_spotify.mute()
         
         #ser = serial.Serial('/dev/ttyACM0',19200)
         # recognize speech using Google Speech Recognition
@@ -71,8 +71,8 @@ while(1):
             pass
         except sr.RequestError as e:
             print("splat; {0}".format(e))
-    else:
-        pass
+    #else:
+        #pass
 
 
 
