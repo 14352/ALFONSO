@@ -27,3 +27,17 @@ def ROOM_ARD_COM_FANOFF():
     print("2")
     time.sleep(1)
     ser.close
+def ROOM_ARD_COM_BLINDSUP():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a blinds up".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def ROOM_ARD_COM_BLINDSDOWN():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a blinds down".encode())
+    print("2")
+    time.sleep(1)
+    ser.close

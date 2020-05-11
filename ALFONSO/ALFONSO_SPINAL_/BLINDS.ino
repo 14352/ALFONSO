@@ -23,3 +23,15 @@ void blindsCoast(){
     digitalWrite(6, HIGH); //reverse
     analogWrite(7, 0); //pin 3 is PWM, 76/255 = (about) 30% speed. Max is 255. 
 }
+
+void downBlinds(){
+  blindsForward(.2);
+  delay(1000);
+  blindsForward(0);
+}
+
+void upBlinds(){
+  blindsReverse(.2);
+  delay(1000);
+  blindsReverse(0);
+}

@@ -17,6 +17,10 @@ void getCommand(){
     fanOn();
   } else if(goARR == "a fan off"){
     fanOff();
+  } else if(goARR == "a blinds up"){
+    upBlinds();
+  }else if(goARR == "a blinds down"){
+    downBlinds();
   } else{
     OUTINT = 0; 
   }

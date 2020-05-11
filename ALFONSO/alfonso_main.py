@@ -13,7 +13,8 @@ import alfonso_spotify
 import alfonso_button
 import alfonso_speak
 # obtain audio from the microphone
-alfonso_spotify.reclaimSpotify()
+#alfonso_spotify.reclaimSpotify()
+
 while(1):
     #if(alfonso_button.button1()):
         #alfonso_spotify.mute()
@@ -55,15 +56,22 @@ while(1):
             elif goARR in alfonso_wordlists.DOWNVOLUME:
                 alfonso_spotify.volDown()
                 
+            elif goARR in alfonso_wordlists.BLINDSUP:
+                alfonso_serial_communication.ROOM_ARD_COM_BLINDSUP()
+                
+            elif goARR in alfonso_wordlists.BLINDSDOWN:
+                alfonso_serial_communication.ROOM_ARD_COM_BLINDSDOWN()
+                alfonso_speak.alfonsoSay("buffer. buffer, buffer, ooooh you must be naked then?")
+                
             else:
                 print("KEYWORD recived no commands registered for:", goARR)
                 alfonso_speak.alfonsoSay("KEYWORD recived no commands registered for"+ goARR)
                 pass
-            try:
-                alfonso_spotify.concurVol()
-            except:
-                alfonso_speak.alfonsoSay("spotify not configured: attempting token reconfiguration")
-                alfonso_spotify.reclaimSpotify()
+#             try:
+#                 alfonso_spotify.concurVol()
+#             except:
+#                 alfonso_speak.alfonsoSay("spotify not configured: attempting token reconfiguration")
+#                 alfonso_spotify.reclaimSpotify()
             
                     
         except sr.UnknownValueError:
