@@ -11,7 +11,7 @@ pip3 install pyserial
 
 pip3 install pyttsx3
 
-pip install pyttsx3sudo apt install -y apt-transport-https curl
+pip3 install pyttsx3sudo apt install -y apt-transport-https curl
 
 sudo apt install -y apt-transport-https curl
 
