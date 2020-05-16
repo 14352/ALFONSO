@@ -3,7 +3,7 @@ this is the hub for alfonso code
 # PREREQUISITES
 sudo apt-get update -y && sudo apt-get upgrade -y
 
-sudo apt-get install python3-pyaudio
+sudo apt-get install python3-pyaudio -Y
 
 sudo apt-get install flac
 
