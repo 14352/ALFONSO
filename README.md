@@ -31,6 +31,6 @@ git config --global user.name 14352
 
 pip3 install spotipy
 
-sudo apt-get install espeak
+sudo apt-get install espeak -Y
 
 dear god install the adafruit libraries
