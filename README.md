@@ -29,4 +29,6 @@ pip3 install spotipy
 
 sudo apt-get install espeak -Y
 
-dear god install the adafruit libraries
+pip3 install fuzzywuzzy
+
+pip3 install fuzzywuzzy[speedup]
