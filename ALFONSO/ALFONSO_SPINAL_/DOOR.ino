@@ -65,7 +65,7 @@ void openDoor(){
 
 void closeDoor(){
   
-  while(getDistance()<90){
+  while(getDistance()<140){
     motorSpeed = getDistance()/100;
     doorRelayOn();
     doorReverse((1 - (motorSpeed/2))/2);
