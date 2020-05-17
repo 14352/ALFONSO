@@ -32,3 +32,13 @@ sudo apt-get install espeak -Y
 pip3 install fuzzywuzzy
 
 pip3 install fuzzywuzzy[speedup]
+
+cd /usr/lib/chromium-browser
+
+sudo wget http://blog.vpetkov.net/wp-content/up...
+
+sudo unzip libwidevinecdm.so_.zip && chmod 755 libwidevinecdm.so
+
+sudo wget http://blog.vpetkov.net/wp-content/up...
+
+sudo unzip chromeos-browser.desktop.zip && mv chromeos-browser.desktop /usr/share/applications
