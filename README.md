@@ -33,9 +33,12 @@ pip3 install fuzzywuzzy
 
 pip3 install fuzzywuzzy[speedup]
 
-sudo apt install kodi kodi-peripheral-joystick kodi-pvr-iptvsimple kodi-inputstream-adaptive kodi-inputstream-rtmp
+cd /usr/lib/chromium-browser
 
-sudo apt install build-essential python-pip python-dev libffi-dev libssl-dev libnss3
+sudo wget http://blog.vpetkov.net/wp-content/up...
 
-sudo pip install setuptools wheel
-sudo pip install pycryptodomex win_inet_pton
+sudo unzip libwidevinecdm.so_.zip && chmod 755 libwidevinecdm.so
+
+sudo wget http://blog.vpetkov.net/wp-content/up...
+
+sudo unzip chromeos-browser.desktop.zip && mv chromeos-browser.desktop /usr/share/applications
