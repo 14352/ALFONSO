@@ -13,44 +13,48 @@ def get_sim(Str1, Str2):
     #print("average",mean(data),":",Str2)
     return mean(data)
 
-def search_commands():
+def search_commands(in1):
     possible_commands_values = [1]
-    possible_commands = ["null"]
+    possible_commands = ["NULL"]
     for x in alfonso_wordlists.FANOFF:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("FANOFF")
     for x in alfonso_wordlists.DOOROPEN:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("DOOROPEN")
     for x in alfonso_wordlists.DOORCLOSE:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("DOORCLOSE")
     for x in alfonso_wordlists.FANON:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("FANON")
     for x in alfonso_wordlists.PLAYMUSIC:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("PLAYMUSIC")
     for x in alfonso_wordlists.NEXTSONG:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("NEXTSONG")
     for x in alfonso_wordlists.UPVOLUME:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("UPVOLUME")
     for x in alfonso_wordlists.DOWNVOLUME:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("DOWNVOLUME")
     for x in alfonso_wordlists.BLINDSUP:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("BLINDSUP")
     for x in alfonso_wordlists.BLINDSDOWN:
-        possible_commands_values.append(get_sim(tr1,x))
+        possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("BLINDSDOWN")
     #print(possible_commands_values)
     #print(possible_commands)
     m = max(possible_commands_values)
     pos = [i for i, j in enumerate(possible_commands_values) if j == m]
     print(m)
-    return possible_commands[pos[0]]
-print(search_commands())
+    if m > 66:
+        ans = possible_commands[pos[0]]
+    else:
+        ans = possible_commands[0]
+    return ans
+#print(search_commands("yo mama"))
 

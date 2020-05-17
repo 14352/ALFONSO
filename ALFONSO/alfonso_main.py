@@ -12,6 +12,7 @@ import alfonso_get_capture
 import alfonso_spotify
 import alfonso_button
 import alfonso_speak
+import alfonso_command_search
 # obtain audio from the microphone
 #alfonso_spotify.reclaimSpotify()
 
@@ -26,40 +27,41 @@ while(1):
             # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
             # instead of `r.recognize_google(audio)`
             goARR = alfonso_get_capture.getVoiceCommand()
-                
-            if goARR in alfonso_wordlists.DOOROPEN:
+            commandSearchResults = alfonso_command_search.search_commands(goARR)
+            
+            if commandSearchResults == "DOOROPEN":
                 alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
                 alfonso_speak.alfonsoSay("opening, the door")
                     
-            elif goARR in alfonso_wordlists.DOORCLOSE:
+            elif commandSearchResults == "DOORCLOSE":
                 alfonso_serial_communication.ROOM_ARD_COM_CLOSEDOOR()
                 alfonso_speak.alfonsoSay("closing, the door")
                 
-            elif goARR in alfonso_wordlists.FANON:
+            elif commandSearchResults == "FANON":
                 alfonso_serial_communication.ROOM_ARD_COM_FANON()
                 alfonso_speak.alfonsoSay("turning the fan, on")
                 
-            elif goARR in alfonso_wordlists.FANOFF:
+            elif commandSearchResults == "FANOFF":
                 alfonso_serial_communication.ROOM_ARD_COM_FANOFF()
                 alfonso_speak.alfonsoSay("turning the fan, off")
                 
-            elif goARR in alfonso_wordlists.PLAYMUSIC:
+            elif commandSearchResults == "PLAYMUSIC":
                 alfonso_spotify.playMusic()
                 alfonso_speak.alfonsoSay("it is that time of day already?")
                 
-            elif goARR in alfonso_wordlists.NEXTSONG:
+            elif commandSearchResults == "NEXTSONG":
                 alfonso_spotify.nextSong()
                 
-            elif goARR in alfonso_wordlists.UPVOLUME:
+            elif commandSearchResults == "UPVOLUME":
                 alfonso_spotify.volUp()
                 
-            elif goARR in alfonso_wordlists.DOWNVOLUME:
+            elif commandSearchResults == "DOWNVOLUME":
                 alfonso_spotify.volDown()
                 
-            elif goARR in alfonso_wordlists.BLINDSUP:
+            elif commandSearchResults == "BLINDSUP":
                 alfonso_serial_communication.ROOM_ARD_COM_BLINDSUP()
                 
-            elif goARR in alfonso_wordlists.BLINDSDOWN:
+            elif commandSearchResults == "BLINDSDOWN":
                 alfonso_serial_communication.ROOM_ARD_COM_BLINDSDOWN()
                 alfonso_speak.alfonsoSay("buffer. buffer, buffer, ooooh you must be naked then?")
                 

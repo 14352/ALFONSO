@@ -16,6 +16,7 @@ def getVoiceCommand():
         r.adjust_for_ambient_noise(source)
         print("listening")
         audio = r.listen(source)
+        print("capture done")
         capture = r.recognize_google(audio)
         Alfonso = "Alfonso"
         print(capture)
