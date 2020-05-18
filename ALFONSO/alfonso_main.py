@@ -13,8 +13,9 @@ import alfonso_spotify
 import alfonso_button
 import alfonso_speak
 import alfonso_command_search
+import alfonso_run_command
 # obtain audio from the microphone
-#alfonso_spotify.reclaimSpotify()
+alfonso_spotify.reclaimSpotify()
 
 while(1):
     #if(alfonso_button.button1()):
@@ -47,7 +48,7 @@ while(1):
                 
             elif commandSearchResults == "PLAYMUSIC":
                 alfonso_spotify.playMusic()
-                alfonso_speak.alfonsoSay("it is that time of day already?")
+                alfonso_speak.alfonsoSay("buffer,buffer,buffer, it is that time of day already?")
                 
             elif commandSearchResults == "NEXTSONG":
                 alfonso_spotify.nextSong()
@@ -64,7 +65,9 @@ while(1):
             elif commandSearchResults == "BLINDSDOWN":
                 alfonso_serial_communication.ROOM_ARD_COM_BLINDSDOWN()
                 alfonso_speak.alfonsoSay("buffer. buffer, buffer, ooooh you must be naked then?")
-                
+            elif commandSearchResults == "NETFLIXON":
+                alfonso_run_command.start_netflix()
+                alfonso_speak.alfonsoSay("buffer. buffer, buffer, some tiger king?")
             else:
                 print("KEYWORD recived no commands registered for:", goARR)
                 alfonso_speak.alfonsoSay("KEYWORD recived no commands registered for"+ goARR)

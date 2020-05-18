@@ -9,3 +9,4 @@ UPVOLUME = ["turn it up", "turn the volume up", "pump the jams", "  turn it up",
 DOWNVOLUME = ["turn it down", "too loud", " turn the volume down", " urn it down"]
 BLINDSUP = ["blinds up"]
 BLINDSDOWN = ["blinds down"]
+NETFLIXON = ["lets watch some netflix", "turn on some netflix", "play some netflix"]

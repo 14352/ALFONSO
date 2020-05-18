@@ -46,6 +46,9 @@ def search_commands(in1):
     for x in alfonso_wordlists.BLINDSDOWN:
         possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("BLINDSDOWN")
+    for x in alfonso_wordlists.NETFLIXON:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("NETFLIXON")
     #print(possible_commands_values)
     #print(possible_commands)
     m = max(possible_commands_values)

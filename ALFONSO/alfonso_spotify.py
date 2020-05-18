@@ -3,6 +3,7 @@ from spotipy.oauth2 import SpotifyOAuth
 from pprint import pprint
 import spotipy.util as util
 from time import sleep
+import alfonso_run_command
 import os
 import sys
 os.environ["SPOTIPY_CLIENT_ID"] = "646179f00e9d444d8c2f42d978c4601c"
@@ -20,7 +21,11 @@ music_vol = 0
 #pprint(res)
 
 # Change track
-def playMusic(): #shuffle boolean
+def playMusic():
+    username = "redlavalamp1"
+    scope = "user-read-playback-state,user-modify-playback-state"
+    token = util.prompt_for_user_token(username, scope)
+    sp = spotipy.Spotify(auth=token)
     global music_vol
     sp.start_playback(context_uri="spotify:playlist:1ILlfhipr1ApFelcJY4dcO", device_id=raspberrypi)
     sp.shuffle(True, device_id=raspberrypi)
@@ -54,6 +59,7 @@ def concurVol():
     sp.volume(music_vol)
 def reclaimSpotify(): #shuffle boolean
     try:
+        alfonso_run_command.start_raspotify()
         username = "redlavalamp1"
         scope = "user-read-playback-state,user-modify-playback-state"
         token = util.prompt_for_user_token(username, scope)
