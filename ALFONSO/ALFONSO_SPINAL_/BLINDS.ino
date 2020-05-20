@@ -26,12 +26,12 @@ void blindsCoast(){
 
 void downBlinds(){
   blindsForward(.2);
-  delay(1000);
+  delay(700);
   blindsForward(0);
 }
 
 void upBlinds(){
   blindsReverse(.2);
-  delay(1000);
+  delay(700);
   blindsReverse(0);
 }

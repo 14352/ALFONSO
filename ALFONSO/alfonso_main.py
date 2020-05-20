@@ -16,7 +16,7 @@ import alfonso_command_search
 import alfonso_run_command
 # obtain audio from the microphone
 alfonso_spotify.reclaimSpotify()
-
+alfonso_serial_communication.ROOM_ARD_COM_CHECK()
 while(1):
     #if(alfonso_button.button1()):
         #alfonso_spotify.mute()
