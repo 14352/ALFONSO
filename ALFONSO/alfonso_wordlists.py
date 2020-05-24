@@ -1,6 +1,6 @@
 TRIGGERS = ["Alfonso", "alfonso"]
 DOOROPEN = ["open the door"]
-DOORCLOSE = ["close the door", "get the door", " lose the door" ]
+DOORCLOSE = ["close the door", "get the door", " lose the door", "I am naked" ]
 FANON = ["turn the fan on","  turn the fan on", " turn on the fan", "  turn the fan on"]
 FANOFF = ["turn the fan off", "  turn the fan off", " urn the fan off"]
 PLAYMUSIC = ["play some music", "play some tunes", " turn some music on"]
@@ -10,3 +10,5 @@ DOWNVOLUME = ["turn it down", "too loud", " turn the volume down", " urn it down
 BLINDSUP = ["blinds up"]
 BLINDSDOWN = ["blinds down"]
 NETFLIXON = ["lets watch some netflix", "turn on some netflix", "play some netflix"]
+QUERYKEYWORDS = ["get me something on", "give me something on", "search for", "Google"]
+DISNEYPLUSON = ["lets watch some disney plus", "turn on some disney plus", "play some disney plus"]

@@ -14,6 +14,7 @@ import alfonso_button
 import alfonso_speak
 import alfonso_command_search
 import alfonso_run_command
+import alfonso_wolfram_alpha
 # obtain audio from the microphone
 alfonso_spotify.reclaimSpotify()
 alfonso_serial_communication.ROOM_ARD_COM_CHECK()
@@ -29,8 +30,13 @@ while(1):
             # instead of `r.recognize_google(audio)`
             goARR = alfonso_get_capture.getVoiceCommand()
             commandSearchResults = alfonso_command_search.search_commands(goARR)
-            
-            if commandSearchResults == "DOOROPEN":
+            isQ = alfonso_command_search.is_query(goARR)
+            print(isQ)
+            if isQ != "no":
+                
+                alfonso_speak.alfonsoResponse(alfonso_wolfram_alpha.search(isQ))
+                
+            elif commandSearchResults == "DOOROPEN":
                 alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
                 alfonso_speak.alfonsoSay("opening, the door")
                     
@@ -68,9 +74,12 @@ while(1):
             elif commandSearchResults == "NETFLIXON":
                 alfonso_run_command.start_netflix()
                 alfonso_speak.alfonsoSay("buffer. buffer, buffer, some tiger king?")
+            elif commandSearchResults == "DISNEYPLUSON":
+                alfonso_run_command.start_disney_plus()
+                alfonso_speak.alfonsoSay("buffer. buffer, buffer, some moana?")
             else:
                 print("KEYWORD recived no commands registered for:", goARR)
-                alfonso_speak.alfonsoSay("KEYWORD recived no commands registered for"+ goARR)
+                #alfonso_speak.alfonsoSay("KEYWORD recived no commands registered for"+ goARR)
                 pass
 #             try:
 #                 alfonso_spotify.concurVol()

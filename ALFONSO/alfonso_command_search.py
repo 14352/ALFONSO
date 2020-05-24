@@ -12,6 +12,17 @@ def get_sim(Str1, Str2):
     data = (token_sort, partial, Ratio)
     #print("average",mean(data),":",Str2)
     return mean(data)
+def is_query(in1):
+    for x in alfonso_wordlists.QUERYKEYWORDS:
+        partial = fuzz.partial_ratio(in1.lower(),x.lower())
+        if partial >= 99:
+            a = 0
+            return in1[len(x):]
+        else:
+            a = 1
+    if a == 1:
+        return "no"
+        
 
 def search_commands(in1):
     possible_commands_values = [1]
@@ -49,6 +60,9 @@ def search_commands(in1):
     for x in alfonso_wordlists.NETFLIXON:
         possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("NETFLIXON")
+    for x in alfonso_wordlists.DISNEYPLUSON:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("DISNEYPLUSON")
     #print(possible_commands_values)
     #print(possible_commands)
     m = max(possible_commands_values)

@@ -7,5 +7,7 @@ def alfonsoName():
     subprocess.Popen("espeak" + ''' "buffer buffer buffer,  my name is, aalllfonso"''', shell=True, stdout=DEVNULL, stderr=STDOUT)
 
 def alfonsoSay(st):
-    subprocess.Popen('espeak \"' + st + '\"', shell=True, stdout=DEVNULL, stderr=STDOUT)
-    
+    subprocess.Popen('espeak \"buffer buffer buffer' + st + '\"', shell=True, stdout=DEVNULL, stderr=STDOUT)
+
+def alfonsoResponse(st):
+    os.system('espeak \"buffer: buffer:' + st + '\"')
