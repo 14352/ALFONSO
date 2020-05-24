@@ -42,3 +42,9 @@ sudo unzip libwidevinecdm.so_.zip && chmod 755 libwidevinecdm.so
 sudo wget http://blog.vpetkov.net/wp-content/up...
 
 sudo unzip chromeos-browser.desktop.zip && mv chromeos-browser.desktop /usr/share/applications
+
+sudo pip3 install wolframalpha
+
+sudo pip3 install wikipedia
+
+
