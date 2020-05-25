@@ -4,6 +4,7 @@ void setup() {
   doorInit();
   commsInit();
   fanInit();
+  initIR():
   pinMode(13, OUTPUT);
 }
 
