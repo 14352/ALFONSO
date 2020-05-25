@@ -4,11 +4,12 @@ void setup() {
   doorInit();
   commsInit();
   fanInit();
-  initIR():
+  InitIR();
   pinMode(13, OUTPUT);
 }
 
 void loop() {
   getCommand(); 
   //Serial.println(getDistance());
+  
 }

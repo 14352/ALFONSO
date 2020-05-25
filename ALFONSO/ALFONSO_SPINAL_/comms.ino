@@ -21,6 +21,30 @@ void getCommand(){
     upBlinds();
   }else if(goARR == "a blinds down"){
     downBlinds();
+  } else if(goARR == "a leds on"){
+    LEDS_POWER();
+  } else if(goARR == "a leds off"){
+    LEDS_POWER();
+  } else if(goARR == "a leds red"){
+    LEDS_RED();
+    LEDS_RED();
+    LEDS_RED();
+  } else if(goARR == "a leds blue"){
+    LEDS_BLUE();
+    LEDS_BLUE();
+    LEDS_BLUE();
+  } else if(goARR == "a leds green"){
+    LEDS_GREEN();
+    LEDS_GREEN();
+    LEDS_GREEN();
+  } else if(goARR == "a leds disco"){
+    LEDS_DISCO();
+    LEDS_DISCO();
+    LEDS_DISCO();
+  } else if(goARR == "a leds white"){
+    LEDS_WHITE();
+    LEDS_WHITE();
+    LEDS_WHITE();
   } else{
     OUTINT = 0; 
   }
