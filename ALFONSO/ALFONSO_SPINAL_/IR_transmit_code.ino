@@ -2,30 +2,9 @@ int IRledPin =  12;    // LED connected to digital pin 13
 
 // The setup() method runs once, when the sketch starts
 
-void setup()   {               
-  // initialize the IR digital pin as an output:
-  pinMode(IRledPin, OUTPUT);     
-  pinMode(7, OUTPUT);
-  Serial.begin(9600);
-}
 
-void loop()                    
-{
-  //LEDS_DISCO();
-  //LEDS_DISCO();
-  //LEDS_DISCO();
-  //delay(5000);
-  PROJECTOR_MUTE();
-  PROJECTOR_MUTE();
-  delay(5000);
-  PROJECTOR_MUTE();
-  PROJECTOR_MUTE();
-  delay(5000);
-  PROJECTOR_MUTE();
-  PROJECTOR_MUTE();
-  delay(5000);
-  
-}
+
+
 
 // This procedure sends a 38KHz pulse to the IRledPin
 // for a certain # of microseconds. We'll use this whenever we need to send codes
