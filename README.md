@@ -23,8 +23,6 @@ sudo apt install raspotify
 
 pip3 install speechrecognition
 
-sudo apt-get install arduino -y
-
 pip3 install spotipy
 
 sudo apt-get install espeak -Y
@@ -48,3 +46,4 @@ sudo pip3 install wolframalpha
 sudo pip3 install wikipedia
 
 
+python3 -m pip install Pillow pyscreenshot
