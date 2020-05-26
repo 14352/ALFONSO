@@ -49,3 +49,60 @@ def ROOM_ARD_COM_CHECK():
     print("2")
     time.sleep(1)
     ser.close
+def LEDS_ON():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds on".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def LEDS_OFF():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds off".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def LEDS_RED():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds red".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+    
+def LEDS_BLUE():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds blue".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def LEDS_GREEN():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds green".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def LEDS_WHITE():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds white".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def LEDS_DISCO():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a leds disco".encode())
+    print("2")
+    time.sleep(1)
+    ser.close
+def PROJECTOR_POWER():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    ser.write("a projector power".encode())
+    print("2")
+    time.sleep(1)
+    ser.close

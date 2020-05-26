@@ -23,28 +23,58 @@ void getCommand(){
     downBlinds();
   } else if(goARR == "a leds on"){
     LEDS_POWER();
+    delay(100);
+    LEDS_POWER();
+    delay(100);
+    LEDS_POWER();
   } else if(goARR == "a leds off"){
+    LEDS_POWER();
+    delay(100);
+    LEDS_POWER();
+    delay(100);
     LEDS_POWER();
   } else if(goARR == "a leds red"){
     LEDS_RED();
+    delay(100);
     LEDS_RED();
+    delay(100);
     LEDS_RED();
+    delay(100);
   } else if(goARR == "a leds blue"){
     LEDS_BLUE();
+    delay(100);
     LEDS_BLUE();
+    delay(100);
     LEDS_BLUE();
+    delay(100);
   } else if(goARR == "a leds green"){
     LEDS_GREEN();
+    delay(100);
     LEDS_GREEN();
+    delay(100);
     LEDS_GREEN();
+    delay(100);
   } else if(goARR == "a leds disco"){
     LEDS_DISCO();
+    delay(100);
     LEDS_DISCO();
+    delay(100);
     LEDS_DISCO();
+    delay(100);
   } else if(goARR == "a leds white"){
     LEDS_WHITE();
+    delay(100);
     LEDS_WHITE();
+    delay(100);
     LEDS_WHITE();
+    delay(100);
+  } else if(goARR == "a projector power"){
+    projectorPower();
+    delay(1000);
+    projectorPower();
+    delay(1000);
+    projectorPower();
+    delay(1000);
   } else{
     OUTINT = 0; 
   }

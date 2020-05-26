@@ -63,6 +63,33 @@ def search_commands(in1):
     for x in alfonso_wordlists.DISNEYPLUSON:
         possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("DISNEYPLUSON")
+    for x in alfonso_wordlists.LEDSON:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSON")
+    for x in alfonso_wordlists.LEDSOFF:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSOFF")
+    for x in alfonso_wordlists.LEDSBLUE:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSBLUE")
+    for x in alfonso_wordlists.LEDSRED:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSRED")
+    for x in alfonso_wordlists.LEDSGREEN:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSGREEN")
+    for x in alfonso_wordlists.LEDSWHITE:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSWHITE")
+    for x in alfonso_wordlists.LEDSDISCO:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LEDSDISCO")
+    for x in alfonso_wordlists.PROJECTORON:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("PROJECTORON")
+    for x in alfonso_wordlists.PROJECTOROFF:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("PROJECTOROFF")
     #print(possible_commands_values)
     #print(possible_commands)
     m = max(possible_commands_values)

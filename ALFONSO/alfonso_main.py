@@ -77,6 +77,26 @@ while(1):
             elif commandSearchResults == "DISNEYPLUSON":
                 alfonso_run_command.start_disney_plus()
                 alfonso_speak.alfonsoSay("buffer. buffer, buffer, some moana?")
+            elif commandSearchResults == "LEDSON":
+                alfonso_serial_communication.LEDS_ON()
+            elif commandSearchResults == "LEDSOFF":
+                alfonso_serial_communication.LEDS_OFF()
+            elif commandSearchResults == "LEDSBLUE":
+                alfonso_serial_communication.LEDS_BLUE()
+            elif commandSearchResults == "LEDSGREEN":
+                alfonso_serial_communication.LEDS_GREEN()
+            elif commandSearchResults == "LEDSRED":
+                alfonso_serial_communication.LEDS_RED()   
+            elif commandSearchResults == "LEDSWHITE":
+                alfonso_serial_communication.LEDS_WHITE()
+            elif commandSearchResults == "LEDSDISCO":
+                alfonso_serial_communication.LEDS_DISCO()
+            elif commandSearchResults == "PROJECTORON":
+                alfonso_serial_communication.PROJECTOR_POWER()
+            elif commandSearchResults == "PROJECTOROFF":
+                alfonso_serial_communication.PROJECTOR_POWER()
+                
+                
             else:
                 print("KEYWORD recived no commands registered for:", goARR)
                 #alfonso_speak.alfonsoSay("KEYWORD recived no commands registered for"+ goARR)
