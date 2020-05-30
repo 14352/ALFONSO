@@ -2,7 +2,7 @@
 
 void commsInit(){
   Serial.begin(9600);
-  Serial.println("arduino ONLINE");
+  //Serial.println("arduino ONLINE");
 }
 void getCommand(){
   
@@ -75,11 +75,16 @@ void getCommand(){
     delay(1000);
     projectorPower();
     delay(1000);
-  } else{
-    OUTINT = 0; 
+  } else if(goARR == "no"){
+     OUTINT = 1;
+     delay(100);
+  } else {
+    OUTINT = 0;
+    delay(100);
+  }
   }
   
-}
+
 
 
 String getSTR(){
