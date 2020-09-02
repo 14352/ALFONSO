@@ -1,4 +1,4 @@
-int IRledPin =  20;    // LED connected to digital pin 13
+int IRledPin =  21;    // LED connected to digital pin 13
 
 // The setup() method runs once, when the sketch starts
 

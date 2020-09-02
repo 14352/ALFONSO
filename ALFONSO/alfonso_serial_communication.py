@@ -1,108 +1,126 @@
-import serial, time
+import os, serial, time
 def ROOM_ARD_COM_OPENDOOR():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a open door".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def ROOM_ARD_COM_CLOSEDOOR():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a close door".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def ROOM_ARD_COM_FANON():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a fan on".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def ROOM_ARD_COM_FANOFF():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a fan off".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def ROOM_ARD_COM_BLINDSUP():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a blinds up".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def ROOM_ARD_COM_BLINDSDOWN():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a blinds down".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
     
 def ROOM_ARD_COM_CHECK():
+    os.system(" arduino --upload --board arduino:avr:mega --port /dev/ttyACM0 /home/pi/ALFONSO/ALFONSO/ALFONSO_SPINAL_/ALFONSO_SPINAL_.ino")
+    time.sleep(2)
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("seltzer".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def LEDS_ON():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds on".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def LEDS_OFF():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds off".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def LEDS_RED():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds red".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
     
 def LEDS_BLUE():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds blue".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def LEDS_GREEN():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds green".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def LEDS_WHITE():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds white".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def LEDS_DISCO():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a leds disco".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
 def PROJECTOR_POWER():
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("1")
+    time.sleep(1)
     ser.write("a projector power".encode())
     print("2")
     time.sleep(1)
-    ser.close
+    ser.close()
+
