@@ -1,5 +1,5 @@
 #include <IRremote.h>
-int RECV_PIN = 6;
+int RECV_PIN = 2;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 
@@ -18,6 +18,7 @@ decode_results results;
 void setup()
 {
   Serial.begin(9600);
+  Serial.println("ready");
   irrecv.enableIRIn(); // Start the receiver
 }
 
