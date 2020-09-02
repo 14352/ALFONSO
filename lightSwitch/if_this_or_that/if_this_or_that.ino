@@ -1,5 +1,7 @@
 #include <IRremote.h>
+#include <Servo.h>
 
+Servo armSwitch;
 int RECV_PIN = 6;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
@@ -20,6 +22,7 @@ void setup()
 {
   Serial.begin(9600);
   irrecv.enableIRIn(); // Start the receiver
+  armSwitch.attach(7);
 }
 
 void loop()
@@ -29,10 +32,12 @@ void loop()
     if (results.value == 0x40BE827D)
     {
       Serial.println("ref");
+      armSwitch.write(20);
     }
     else if (results.value == 0x40BE42BD)
     {
       Serial.println("-");
+      armSwitch.write(100);
     }
     
     irrecv.resume();
