@@ -23,15 +23,15 @@ void getCommand(){
     downBlinds();
   } else if(goARR == "a leds on"){
     LEDS_POWER();
-    delay(100);
+    delay(300);
     LEDS_POWER();
-    delay(100);
+    delay(300);
     LEDS_POWER();
   } else if(goARR == "a leds off"){
     LEDS_POWER();
-    delay(100);
+    delay(3100);
     LEDS_POWER();
-    delay(100);
+    delay(300);
     LEDS_POWER();
   } else if(goARR == "a leds red"){
     LEDS_RED();
@@ -82,7 +82,7 @@ void getCommand(){
     delay(250);
     LIGHTS_ON();
     delay(250);
-  } else if(goARR == "a lights OFF"){
+  } else if(goARR == "a lights off"){
     LIGHTS_OFF();
     delay(250);
     LIGHTS_OFF();

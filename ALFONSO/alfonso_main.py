@@ -34,7 +34,7 @@ while(1):
             print(isQ)
             if isQ != "no":
                 
-                alfonso_speak.alfonsoResponse(alfonso_wolfram_alpha.search(isQ))
+                print("not registered as a command LOL LOOSER HEHE")
                 
             elif commandSearchResults == "DOOROPEN":
                 alfonso_serial_communication.ROOM_ARD_COM_OPENDOOR()
