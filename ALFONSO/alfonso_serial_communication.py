@@ -124,3 +124,21 @@ def PROJECTOR_POWER():
     time.sleep(1)
     ser.close()
 
+def LIGHTS_ON():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    time.sleep(1)
+    ser.write("a lights on".encode())
+    print("2")
+    time.sleep(1)
+    ser.close()
+
+def LIGHTS_OFF():
+    ser = serial.Serial('/dev/ttyACM0',9600)
+    print("1")
+    time.sleep(1)
+    ser.write("a lights off".encode())
+    print("2")
+    time.sleep(1)
+    ser.close()
+

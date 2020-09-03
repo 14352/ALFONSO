@@ -95,6 +95,11 @@ while(1):
                 alfonso_serial_communication.PROJECTOR_POWER()
             elif commandSearchResults == "PROJECTOROFF":
                 alfonso_serial_communication.PROJECTOR_POWER()
+
+            elif commandSearchResults == "LIGHTSON":
+                alfonso_serial_communication.LIGHTS_ON()
+            elif commandSearchResults == "LIGHTSOFF":
+                alfonso_serial_communication.LIGHTS_OFF()
                 
                 
             else:

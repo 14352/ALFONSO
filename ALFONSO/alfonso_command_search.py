@@ -90,6 +90,12 @@ def search_commands(in1):
     for x in alfonso_wordlists.PROJECTOROFF:
         possible_commands_values.append(get_sim(in1,x))
         possible_commands.append("PROJECTOROFF")
+    for x in alfonso_wordlists.LIGHTSON:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LIGHTSON")
+    for x in alfonso_wordlists.LIGHTSOFF:
+        possible_commands_values.append(get_sim(in1,x))
+        possible_commands.append("LIGHTSOFF")
     #print(possible_commands_values)
     #print(possible_commands)
     m = max(possible_commands_values)
