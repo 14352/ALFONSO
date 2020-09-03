@@ -26,13 +26,13 @@ void getCommand(){
     delay(300);
     LEDS_POWER();
     delay(300);
-    LEDS_POWER();
+    
   } else if(goARR == "a leds off"){
-    LEDS_POWER();
-    delay(3100);
     LEDS_POWER();
     delay(300);
     LEDS_POWER();
+    delay(300);
+    
   } else if(goARR == "a leds red"){
     LEDS_RED();
     delay(100);
