@@ -75,6 +75,20 @@ void getCommand(){
     delay(1000);
     projectorPower();
     delay(1000);
+  } else if(goARR == "a lights on"){
+    LIGHTS_ON();
+    delay(250);
+    LIGHTS_ON();
+    delay(250);
+    LIGHTS_ON();
+    delay(250);
+  } else if(goARR == "a lights OFF"){
+    LIGHTS_OFF();
+    delay(250);
+    LIGHTS_OFF();
+    delay(250);
+    LIGHTS_OFF();
+    delay(250);
   } else if(goARR == "no"){
      OUTINT = 1;
      //delay(100);
